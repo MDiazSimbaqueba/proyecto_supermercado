@@ -10,6 +10,7 @@ import { ticketRouter } from "./routes/ticket.routes.js"
 import { saleRouter } from "./routes/sale.routes.js"
 import { errorHandler } from "./middleware/errorHandler.js"
 import { unknownEndpoint } from "./middleware/unknownEndpoint.js"
+import { calculateRouter } from "./routes/calculate-total.routes.js"
 
 const server = express()
 const PORT = process.env.APP_PORT
@@ -21,6 +22,7 @@ server.use('/api/v1/articles', articleRouter)
 server.use('/api/v1/employees', employeeRouter)
 server.use('/api/v1/tickets', ticketRouter)
 server.use('/api/v1/sales', saleRouter)
+server.use('/api/v1/calculate-total', calculateRouter)
 
 server.use(unknownEndpoint);
 server.use(errorHandler);
@@ -36,3 +38,5 @@ async function main(){
     }
 }
 main()
+    
+

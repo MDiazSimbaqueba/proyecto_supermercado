@@ -3,8 +3,18 @@ import mercadoLogo from './assets/mercadoLogo.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+    const url = "https://api-supermercado.onrender.com/api/v1/users"
+    const [users, setUsers] = useState([])
 
+    useEffect(() => {
+        async function getUsers() {
+            const res = await fetch(url)
+            const json = await res.json()
+            setUsers(json.users)
+        }
+        getUsers()
+    })
+    
   return (
     <>
       <header>
@@ -33,14 +43,16 @@ function App() {
       <section class="espacio"></section>
 
       <main>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur doloremque voluptate veniam molestias assumenda aut temporibus obcaecati ut quis distinctio recusandae rem vero excepturi, est nihil vitae id laborum!
-          
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, laboriosam harum! Vero perferendis quod iusto esse voluptates facere. Ut error tenetur obcaecati facilis vel excepturi quo magnam delectus quibusdam aspernatur.
-        </h1>
+          {users.map((users)=> (
+              <div key={users} className='column is-3'>
+                  <div className='card'>
+                      <div className='card-content'>
+                          <h2 className="mb-4 is-size-5 has-text-weight-semibold">{users.strUsers}</h2>
+                      </div>
+                  </div>
+              </div>
+              ))}
       </main>
-
-      <footer>
-      </footer>
     </>
   )
 }

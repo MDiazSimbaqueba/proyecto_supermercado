@@ -1,9 +1,10 @@
 import { Ticket } from "../model/ticket.js"
 
-export const calculateTotal = async (req, res) => {
+export const calculateTotal = async (req, res, next) => {
     try {
-        const ticketId = req.params.ticketId; // Supongamos que pasas el ID del ticket como parámetro en la URL
-        const ticket = await Ticket.findById(ticketId).populate('articles')// Usamos populate para obtener los datos de los artículos asociados al ticket
+        const ticketId = req.params.id; // Supongamos que pasas el ID del ticket como parámetro en la URL
+        const ticket = await Ticket.findById(ticketId).populate('articles')
+        // Usamos populate para obtener los datos de los artículos asociados al ticket
 
         if (!ticket) {
         return res.status(404).json({ error: 'Ticket no encontrado' })
@@ -16,6 +17,7 @@ export const calculateTotal = async (req, res) => {
         // Calcular el subtotal, IVA y total del ticket
         ticket.articles.forEach((article) => {
         const articleTotal = article.price * article.amount
+
         subtotal += articleTotal
         vat += articleTotal * ticket.vat
         });
@@ -31,6 +33,7 @@ export const calculateTotal = async (req, res) => {
 
         res.json({ subtotal, vat, total })
     } catch (error) {
-        res.status(500).json({ error: 'Error al calcular el total' })
+        next(error)
+        // res.status(500).json({ error: 'Error al calcular el total' })
     }
 }

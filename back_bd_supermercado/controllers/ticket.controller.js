@@ -3,7 +3,7 @@ import { Ticket } from "../model/ticket.js"
 //GET TICKETS
 export const getTickets = async (req, res, next) => {
     try {
-        const Tickets = await Ticket.find({}).populate("client").populate("article").exec()
+        const Tickets = await Ticket.find({}).populate("client").populate("articles").exec()
         res.status(200).json(Tickets)
     } catch (error) {
         next(error)
@@ -14,7 +14,7 @@ export const getTickets = async (req, res, next) => {
 export const getTicket = async (req, res, next) => {
     try {
         const id = req.params.id
-        const ticketFound = await Ticket.findById(id).populate("client").populate("article").exec()
+        const ticketFound = await Ticket.findById(id).populate("client").populate("articles").exec()
         res.status(200).json(ticketFound)
 
         if (!ticketFound) {

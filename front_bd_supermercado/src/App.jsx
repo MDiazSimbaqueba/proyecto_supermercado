@@ -4,16 +4,16 @@ import './App.css'
 
 function App() {
     const url = "https://api-supermercado.onrender.com/api/v1/users"
-    const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([url])
 
-    useEffect(() => {
-        async function getUsers() {
-            const res = await fetch(url)
-            const json = await res.json()
-            setUsers(json.users)
-        }
-        getUsers()
-    })
+    // useEffect(() => {
+    //     async function getUsers() {
+    //         const res = await fetch(url)
+    //         const json = await res.json()
+    //         setUsers(json.users)
+    //     }
+    //     getUsers()
+    // })
     
   return (
     <>

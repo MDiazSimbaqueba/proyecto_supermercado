@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import mercadoLogo from './assets/mercadoLogo.png'
 import './App.css'
 
 function App() {
@@ -8,29 +7,40 @@ function App() {
 
   return (
     <>
-      <nav>
-        <h1>Esto es un NAV</h1>
-      </nav>
-      <h1>Supermercado ProTalent</h1>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <header>
+        <div class="menu">
+            <i class="bi bi-list"></i>
+            <span>Menú</span>
+        </div>
+        <section>
+            <div class="logo">
+                <img src={mercadoLogo} className="logo" alt="Mercado logo" />
+            </div>
+    
+            <div class="input-search">
+                <input type="text" placeholder="¿Qué estas buscando?"/>
+                <button><i class="bi bi-search"></i>Buscar</button>
+            </div>
+    
+            <div class="navbar">
+                <div>
+                    <a href=""><i class="bi bi-person"></i></a>
+                    <a href="">Login</a>
+                </div>
+            </div>
+        </section>
+      </header>
+      <section class="espacio"></section>
+
+      <main>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur doloremque voluptate veniam molestias assumenda aut temporibus obcaecati ut quis distinctio recusandae rem vero excepturi, est nihil vitae id laborum!
+          
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, laboriosam harum! Vero perferendis quod iusto esse voluptates facere. Ut error tenetur obcaecati facilis vel excepturi quo magnam delectus quibusdam aspernatur.
+        </h1>
+      </main>
+
+      <footer>
+      </footer>
     </>
   )
 }

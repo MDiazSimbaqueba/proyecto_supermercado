@@ -22,6 +22,10 @@ server.use('/api/v1/employees', employeeRouter)
 server.use('/api/v1/tickets', ticketRouter)
 server.use('/api/v1/sales', saleRouter)
 server.use('/api/v1/calculate-total', calculateRouter)
+server.use(
+    '/api/v1/welcome',
+    (req, res) => res.status(200).json({message: '¡Welcome to my api rest!'})
+)
 
 server.use(unknownEndpoint);
 server.use(errorHandler);

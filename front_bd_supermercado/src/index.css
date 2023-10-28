@@ -1,69 +1,129 @@
-:root {
+*{
+  padding: 0%;
+  margin: 0%;
+  text-decoration: none;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+}
 
+header{
+  width: 100%;
+  height: 100px;
+  /* background: #1A9EDA; */
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  position: fixed;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.menu{
+  width: 3%;
+  position: absolute;
+  color: #dadada;
+  margin-left: 20px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.menu:hover{
+  color: white;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+header>section{
+  width: 100%;
+  display: flex;
+  margin-left: 150px;
+  justify-content: space-around;
+  height: 100px;
+  align-items: center;
+}
+
+.logo{
+  width: 120px;
+}
+
+.input-search{
+  display: flex;
+  height: 50px;
+  width: 550px;
+  border-radius: 20px;
+}
+
+.input-search>input{
+  background: #c5c5c5;
+  color: #242424;
+  font-size: 20px;
+  width: 450px;
+  border: none;
+  padding: 15px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.input-search>button{
+  padding: 0px 50px;
+  border-radius: 0px 20px 20px 0px;
+  border: none;
+  background: #afafaf;
+  color: #242424;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  cursor:pointer;
+}
+
+.input-search>button:active{
+  background: #525252;
+  color: #afafaf;
+  transition: background 0.5s ease;
+}
+
+.input-search>button:hover{
+  background: #7e7e7e;
+  transition: background 0.6s ease;
+}
+
+
+.input-search>button>i{
+  margin-right: 8px;
+}
+
+.input-search>input:focus{
+  outline: none;
+  border: none;
+}
+
+.navbar{
+  display: flex;
+}
+
+.navbar>div{
+  padding: 10px 50px;
+  border: 3px solid #242424;
+  margin: 0px 20px;
+}
+
+.navbar>div>a{
+  font-size: 25px;
+  color: #dadada;
+  font-weight: 600;
+}
+
+.navbar>div:hover{
+  background-color: #525252;
+  padding: 10px 50px;
+  border: 3px solid #7e7e7e;
+  border-radius: 30px;
+  color: rgb(255, 255, 255);
+}
+
+.navbar>div>a>i{
+  margin-right: 5px;
+}
+
+.espacio{
+  height: 100px;
 }

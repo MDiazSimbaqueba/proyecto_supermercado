@@ -2,7 +2,7 @@ import { Ticket } from "../model/ticket.js"
 
 export const calculateTotal = async (req, res, next) => {
     try {
-        const ticketId = req.params.id; // Supongamos que pasas el ID del ticket como parámetro en la URL
+        const ticketId = req.params.id; //Supongamos que pasas el ID del ticket como parámetro en la URL
         const ticket = await Ticket.findById(ticketId).populate('articles')
         // Usamos populate para obtener los datos de los artículos asociados al ticket
 
